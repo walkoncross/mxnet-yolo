@@ -16,7 +16,7 @@ def parse_args():
     parser.add_argument('--val-list', dest='val_list', help='validation list to use',
                         default="", type=str)
     parser.add_argument('--network', dest='network', type=str, default='darknet19_yolo',
-                        choices=['darknet19_yolo'], help='which network to use')
+                        help='which network to use')
     parser.add_argument('--batch-size', dest='batch_size', type=int, default=64,
                         help='training batch size')
     parser.add_argument('--resume', dest='resume', type=int, default=-1,
@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument('--random-shape-epoch', dest='random_shape_epoch', type=int,
                         default=10, help='random shape epoch')
     parser.add_argument('--min-random-shape', dest='min_random_shape', type=int,
-                        default=320, help='minimum random data shape')
+                        default=352, help='minimum random data shape')
     parser.add_argument('--max-random-shape', dest='max_random_shape', type=int,
                         default=512, help='maximum random data shape')
     parser.add_argument('--label-width', dest='label_width', type=int, default=350,
@@ -63,7 +63,7 @@ def parse_args():
                         help='blue mean value')
     parser.add_argument('--lr-steps', dest='lr_refactor_step', type=str, default='150, 200',
                         help='refactor learning rate at specified epochs')
-    parser.add_argument('--lr-factor', dest='lr_refactor_ratio', type=str, default=0.1,
+    parser.add_argument('--lr-factor', dest='lr_refactor_ratio', type=str, default=1,
                         help='ratio to refactor learning rate')
     parser.add_argument('--freeze', dest='freeze_pattern', type=str, default="^(conv1_|conv2_).*",
                         help='freeze layer pattern')
